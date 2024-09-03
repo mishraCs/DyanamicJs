@@ -1,0 +1,51 @@
+JavaScript : JavaScript is a programming language used for creating dynamic content on websites. It is a lightweight, cross-platform and single-threaded programming language. JavaScript is an interpreted language that executes code line by line providing more flexibility. It is a commonly used programming language to create dynamic and interactive elements in web applications. It is easy to learn.
+
+1. JavaScript for Loop
+The JS for loop provides a concise way of writing the loop structure. The for loop contains initialization, condition, and increment/decrement in one line thereby providing a shorter, easy-to-debug structure of looping. 
+for (initialization; testing condition; increment/decrement) {
+    statement(s)
+}
+
+2. JavaScript while Loop
+The JS while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be thought of as a repeating if statement. 
+while (boolean condition) {
+    loop statements...
+}
+
+3. JavaScript do-while Loop
+The JS do-while loop is similar to the while loop with the only difference is that it checks for the condition after executing the statements, and therefore is an example of an Exit Control Loop. It executes loop content at least once event the condition is false.
+do {
+    Statements...
+}
+while (condition);
+
+4. JavaScript for-in Loop
+JS for-in loop is used to iterate over the properties of an object. The for-in loop iterates only over those keys of an object which have their enumerable property set to “true”.
+for(let variable_name in object_name) {
+    // Statement
+}
+
+5. JavaScript for-of Loop
+JS for-of loop is used to iterate the iterable objects for example – array, object, set and map. It directly iterate the value of the given iterable object and has more concise syntax than for loop.
+for(let variable_name of  object_name) {
+    // Statement
+}
+
+6. JavaScript forEach loop
+A forEach loop is a method on arrays that executes a function for each element in the array.
+const arr = [1, 2, 3];
+arr.forEach(val => console.log(val));
+
+LocalStorage is a client-side web storage mechanism provided by JavaScript that allows developers to save key-value pairs locally in the user’s browser.
+
+Make sum each element of an array using map function of js;
+const arr = [1, 2, 3];
+const sumArr = arr.map(val => {
+    let sumValue = val;
+    if(val % 2 = 0){
+        sumValue = val;
+    }else{
+        sumValue = val + 1;
+    }
+    return sumArr;
+});

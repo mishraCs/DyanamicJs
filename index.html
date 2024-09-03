@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To do list</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Item Page</h1>
+    <ul id="item-ul-list"></ul>
+    
+    <div id="form-div">
+        <form id="form">
+            <label for="item-input"></label>
+            <input type="text" id="item-input">
+            <button type="submit" class="styled-button" onclick="getItemValue()">Add</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        const arr = [1, 2, 3]; //update the array using map
+        document.write('Original Array :'+arr);
+        document.write('<br>');
+        const sumArr = arr.map(val => {
+            let sumValue = val;
+            if (val % 2 === 0) {
+                sumValue = val;
+            } else {
+                sumValue = val + 1;
+            }
+            return sumValue;
+        }); 
+        console.log(sumArr);
+        document.write('Update Array   :'+sumArr + ':  Here the all odd vlaue have 1 extra add value to do make that value sum');
+    </script>
+    <script>
+        let arrsum = [1, 2, 3, 7, true, false];
+        let total = 0;
+        console.log(typeof true);
+        for(let i = 0; i<arrsum.length; i++){
+            if(typeof arrsum[i]  === 'boolean' ){
+                total += Number(arrsum[i]);
+            }if(typeof arrsum[i] === typeof 2){
+                total += arrsum[i];
+            }
+        }
+        console.log('Total value :'+total);
+    </script>
+</body>
+</html>
