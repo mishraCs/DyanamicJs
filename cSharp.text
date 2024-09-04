@@ -1,0 +1,40 @@
+C# is an object-oriented programming language created by Microsoft that runs on the .NET Framework.
+The first version was released in year 2002. The latest version, C# 12, was released in November 2023.
+
+C# is used for:
+Mobile applications
+Desktop applications
+Web applications
+Web services
+Web sites
+Games
+VR
+Database applications
+And much more!
+
+Websites are mainly for displaying information.
+Web Applications are for user interaction and performing tasks.
+Web Services are for enabling communication between different applications.
+
+why use C#
+C# is an object-oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
+As C# is close to C, C++ and Java, it makes it easy for programmers to switch to C# or vice versa
+
+1. using System means that we can use classes from the System namespace.
+2. namespace is used to organize your code, and it is a container for classes and other namespaces.
+3. class is a container for data and methods, which brings functionality to your program. Every line of code that runs in C# must be inside a class. 
+
+Console is a class of the System namespace, which has a WriteLine() method that is used to output/print text.
+Console.WriteLine('adsf)';
+
+dataTypes : 
+int - stores integers (whole numbers), without decimals, such as 123 or -123
+double - stores floating point numbers, with decimals, such as 19.99 or -19.99
+char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+string - stores text, such as "Hello World". String values are surrounded by double quotes
+bool - stores values with two states: true or false
+
+The precision of a floating point value indicates how many digits the value can have after the decimal point.
+float: Single-precision (32-bit). It can store approximately 6-7 decimal digits. requires an f/F when initializing. Generally used F
+double: Double-precision (64-bit). It can store approximately 15-16 decimal digits12. not required d/D
+

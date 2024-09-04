@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.calc {
+    background-color: #000; /* Black background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#calc-solve {
+    color: #fff; /* White text */
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.calc-num {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.calc-num button {
+    background-color: #008000; /* Green background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calc-num button:hover {
+    background-color: #004d00; /* Darker green on hover */
+}
+
+#clear {
+    background-color: #ffd700; /* Gold background */
+    color: #000; /* Black text */
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#clear:hover {
+    background-color: #b8860b; /* Darker gold on hover */
+}
+
+button#addition, button#subtraction, button#multiplication, button#divison, button#equal {
+    background-color: #0000ff; /* Blue background */
+    color: #fff; /* White text */
+}
+
+button#addition:hover, button#subtraction:hover, button#multiplication:hover, button#divison:hover, button#equal:hover {
+    background-color: #00008b; /* Darker blue on hover */
+}
