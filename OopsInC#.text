@@ -1,0 +1,343 @@
+OOPS 
+
+OOP stands for Object-Oriented Programming.
+
+Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.
+
+Object-oriented programming has several advantages over procedural programming:
+
+OOP is faster and easier to execute
+OOP provides a clear structure for the programs
+OOP helps to keep the C# code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+OOP makes it possible to create full reusable applications with less code and shorter development time.
+
+Classes and objects are the two main aspects of object-oriented programming.
+A class is a template for objects, and an object is an instance of a class.
+When the individual objects are created, they inherit all the variables and methods from the class.
+
+To create an object in C#, specify the class name, followed by the object name, use the equal sign, the `new` keyword, and again write the class name with parentheses, and end with a semicolon.
+
+Creating multiple objects of the same class in the same file in C# allows you to:
+Store Different Data: Each object can hold different values for its properties, representing different instances of the class.
+
+it is a good way to make multiple classes in the same file, when define condition is met in oops programing :
+Small, Related Classes: If the classes are small and tightly related (e.g., helper or inner classes), it can make sense to group them in one file for better organization.
+Encapsulation: Nested classes (a class within another class) can be useful when a class is only relevant to the enclosing class, enhancing encapsulation.
+Utility Classes: If you're defining multiple small utility classes that are only used within the same scope, it can make sense to keep them together in a single file.
+You can also create an object of a class and access it in another class.
+
+variable inside a class called fields that is a member of class and you can access them by creating an object of the class, and by using the dot syntax (.).
+here also we can modify a class field using syntax :
+myObj.color = "red"; This is especially useful when creating multiple objects of one class:
+
+To access methods of a class, create an object of that class, and then use the object name followed by a dot (.), followed by the method name with parentheses, and end the statement with a semicolon.
+
+A constructor is a special method that is used to initialize objects. The advantage of a constructor, is that it is called when an object of a class is created. It can be used to set initial values for fields:
+When you initialize an object, you allocate memory for it and often assign values to its attributes through a constructor or directly.
+constructor name must match the class name, Just like other methods, constructors can be overloaded by using different numbers of parameters, You can have as many parameters as you want, the constructor is very useful to reducing the amount of code.
+
+Access Modifiers are used to set the access level/visibility for classes, fields, methods and properties.
+public	The code is accessible for all classes
+private	The code is only accessible within the same class
+protected	The code is accessible within the same class, or in a class that is inherited from that class. You will learn more about inheritance in a later chapter
+internal	The code is only accessible within its own assembly, but not from another assembly. You will learn more about this in a later chapter
+There's also two combinations: protected internal and private protected.
+
+why access Modifiers ; To control the visibility the class members, To achieve "Encapsulation" - which is the process of making sure that "sensitive" data is hidden from users. This is done by declaring fields as private. 
+By default, all members of a class are private if you don't specify an access modifier:
+
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. 
+declare fields/variables as private
+provide public get and set methods, through properties, to access and update the value of a private field
+
+Sometimes it is neccessary to access private field, to do for that we are used property, A property is like a combination of a variable and a method, and it has two methods: a get and a set method:
+class Person
+{
+  private string name; // field
+
+  public string Name   // property
+  {
+    get { return name; }   // get method
+    set { name = value; }  // set method
+  }
+}
+C# also provides a way to use short-hand / automatic properties, where you do not have to define the field for the property, and you only have to write get; and set; inside the property.
+class Person
+{
+  public string Name  // property
+  { get; set; }
+}
+upper both for ;
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person myObj = new Person();
+    myObj.Name = "Liam";
+    Console.WriteLine(myObj.Name);
+  }
+}
+Why Encapsulation?
+Better control of class members (reduce the possibility of yourself (or others) to mess up the code)
+Fields can be made read-only (if you only use the get method), or write-only (if you only use the set method)
+Flexible: the programmer can change one part of the code without affecting other parts
+Increased security of data
+
+There are two type of class
+Base Class, and Derrived class,
+A class that is inherit properties and method form another class is called a Derrived class, and the clss that's from Derrived class inherited the properties and methods is called Base class.
+
+Inheritance is a fundamental concept in object-oriented programming where a new derived class  is created based on an existing base class The subclass inherits properties and methods from the base class, allowing it to reuse, extend, or modify the functionality of the base class.
+
+the : symbol to inherit from a class.
+
+Importance in Programming:
+Code Reusability: Inheritance allows for the reuse of existing code, reducing duplication and making it easier to maintain and extend.
+Hierarchical Classification: It helps in organizing classes into a hierarchy, representing relationships between different types of objects in a clear, structured way.
+Extensibility: It enables extending the functionality of existing classes without modifying them, which supports scalability and flexibility.
+Polymorphism: Inheritance supports polymorphism, where a base class reference can point to derived class objects, allowing for flexible and dynamic method invocation.
+
+If you don't want other classes to inherit from a class, use the sealed keyword:
+sealed class Vehicle 
+{
+  ...
+}
+
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+polymorphism is used to those methods that's are inherited by current class 
+For example, think of a base class called Animal that has a method called animalSound(). Derived classes of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.):
+
+ C# provides an option to override the base class method, by adding the virtual keyword to the method inside the base class, and by using the override keyword for each derived class methods:
+  It is useful for code reusability: reuse fields and methods of an existing class when you create a new class;
+
+Data abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces.
+
+The abstract keyword is used for classes and methods:
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the derived class (inherited from).
+An abstract class can have both abstract and regular methods:
+
+we use the : symbol to inherit from a class, and that we use the override keyword to override the base class method.
+
+Interfaces in C#
+
+An interface is a completely abstract class that can only contain abstract methods and properties (without bodies):
+interface IAnimal 
+{
+    void AnimalSound(); // Interface method (no body)
+    void Run(); // Interface method (no body)
+}
+Default Modifiers: Interface members are implicitly `abstract` and `public`.
+Naming Convention: Prefix interface names with `I`.
+Restrictions: 
+  Interfaces cannot be instantiated directly.
+  - Methods in interfaces have no bodies; implementation is provided by the implementing class.
+  Interfaces cannot contain fields/variables or constructors.
+  
+Notes:
+Implementing a class must override all interface methods.
+Interfaces can contain properties and methods but not fields.
+Interfaces are used to achieve abstraction and multiple inheritance.
+
+Why Use Interfaces?
+1. Security: Hide details and expose only essential information.
+2. Multiple Inheritance: C# supports single inheritance for classes but allows a class to implement multiple interfaces, achieving a form of multiple inheritance.
+
+To implement multiple interfaces, separate them with commas:
+class Example : IAnimal, IOtherInterface
+{
+    // Implementation of methods
+}
+
+
+
+
+
+C# allows a class to inherit behaviors from multiple sources.
+// Define the first interface
+public interface IDriveable
+{
+    void Drive(); // Method to drive the car
+}
+
+// Define the second interface
+public interface IChargeable
+{
+    void Charge(); // Method to charge the car
+}
+
+// Implement both interfaces in the HybridCar class
+public class HybridCar : IDriveable, IChargeable
+{
+    public void Drive()
+    {
+        Console.WriteLine("The hybrid car is driving.");
+    }
+
+    public void Charge()
+    {
+        Console.WriteLine("The hybrid car is charging.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        HybridCar myCar = new HybridCar();
+        myCar.Drive();  // Output: The hybrid car is driving.
+        myCar.Charge(); // Output: The hybrid car is charging.
+    }
+}
+
+
+Enum is short for "enumerations", which means "specifically listed".
+An enum is a special "class" that represents a group of constants (unchangeable/read-only variables).
+
+To create an enum, use the enum keyword (instead of class or interface), and separate the enum items with a comma:
+using System;
+
+namespace MyApplication
+{
+  enum Level
+  {
+    Low,
+    Medium,
+    High
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Level myVar = Level.Medium;
+      Console.WriteLine(myVar);
+    }
+  }
+}
+
+By default, the first item of an enum has the value 0. The second has the value 1, and so on.
+enum Months
+{
+  January,    // 0
+  February,   // 1
+  March,      // 2
+  April,      // 3
+  May,        // 4
+  June,       // 5
+  July        // 6
+}
+Enums are often used in switch statements to check for corresponding values:
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    enum Level
+    {
+      Low,
+      Medium,
+      High
+    }
+    static void Main(string[] args)
+    {
+      Level myVar = Level.Medium;
+      switch(myVar) 
+      {
+        case Level.Low:
+          Console.WriteLine("Low level");
+          break;
+        case Level.Medium:
+          Console.WriteLine("Medium level");
+          break;
+        case Level.High:
+          Console.WriteLine("High level");
+          break;
+      }    
+    }
+  }
+}
+Use enums when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
+
+
+The File class from the System.IO namespace, allows us to work with files:
+The File class has many useful methods for creating and getting information about files. For example:
+
+Method	Description
+AppendText()	Appends text at the end of an existing file
+Copy()	Copies a file
+Create()	Creates or overwrites a file
+Delete()	Deletes a file
+Exists()	Tests whether the file exists
+ReadAllText()	Reads the contents of a file
+Replace()	Replaces the contents of a file with the contents of another file
+WriteAllText()	Creates a new file and writes the contents to it. If the file already exists, it will be overwritten.
+
+
+to programing with files in C#:
+using System.IO;  // include the System.IO namespace
+string writeText = "Hello World!";  // Create a text string
+File.WriteAllText("filename.txt", writeText);  // Create a file and write the content of writeText to it
+string readText = File.ReadAllText("filename.txt");  // Read the contents of the file
+Console.WriteLine(readText);  // Output the content
+
+different errors can occur: coding errors made by the programmer, errors due to wrong input, or other unforeseeable things.
+C# will throw an exception (throw an error).
+
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+The try and catch keywords come in pairs:
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);
+}
+catch (Exception e)
+{
+  Console.WriteLine(e.Message);
+}
+The finally statement lets you execute code, after try...catch, regardless of the result:
+finally
+{
+  Console.WriteLine("The 'try catch' is finished.");
+}
+
+
+The throw statement allows you to create a custom error.
+The throw statement is used together with an exception class. There are many exception classes available in C#: ArithmeticException, FileNotFoundException, IndexOutOfRangeException, TimeOutException, etc:
+static void checkAge(int age)
+{
+  if (age < 18)
+  {
+    throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+  }
+  else
+  {
+    Console.WriteLine("Access granted - You are old enough!");
+  }
+}
+
+static void Main(string[] args)
+{
+  checkAge(15);
+}
+
+
+Create simple Hello worl program ;
+using System;
+namespace hello
+{
+    class hello
+    {
+        static void Main(string[] argu)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+
+
+
+static: Indicates that the method belongs to the class itself rather than to instances of the class. This allows the runtime to call the method without creating an instance of the class.
+
